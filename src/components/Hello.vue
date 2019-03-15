@@ -6,29 +6,49 @@
 </template>
 
 <script lang="ts">
-export default {
-  name: 'hello',
-  data () {
-    return {
-      message: 'Welcome to Your Vue.js App'
-    }
-  },
 
-  computed: {
-    fullMessage(){
-      return `${this.message} from Typescript`;
-    }
-  },
+import Vue from 'vue'
+import Component from 'vue-class-component'
+
+@Component ({})
+export default class Hello extends Vue { 
+
+  message: string = 'Hello Vue'
+
+  get fullMessage() {
+    return `${this.message} from TypeScript`
+  }
 
   created() {
     console.log('created');
-  },
-
-  methods: {
-    clicked(){
-      console.log('clicked');
-    }
   }
+
+  clicked() {
+    console.log('clicked');
+  }
+  // name: 'hello'; addressed by class name
+  // data () {
+  //   return {
+  //     message: 'Welcome to Your Vue.js App'
+  //     replaced with  
+  //   }
+  // },
+
+  // computed: {
+  //   fullMessage(){
+  //     return `${this.message} from Typescript`;
+  //   }
+  // },
+
+  // created() {
+  //   console.log('created');
+  // },
+
+  // methods: {
+  //   clicked(){
+  //     console.log('clicked');
+  //   }
+  // }
 }
 </script>
 
